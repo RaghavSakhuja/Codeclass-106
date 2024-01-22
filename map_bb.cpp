@@ -9,6 +9,14 @@ void print_map(map<int,int> m){
     cout << endl;
 }
 
+void print_umap(unordered_map<int,int> um){
+    cout << "size: " << um.size() << endl;
+    for(auto it = um.begin(); it != um.end(); it++){
+        cout << it->first << " " << it->second << endl;
+    }
+    cout << endl;
+}
+
 int main(){
     map<int,int> m;
     m[1] = 100;
@@ -31,6 +39,13 @@ int main(){
     {
         cout << "map is not empty" << endl;
     }
-    return 0;
 
+    unordered_map<int,int> um;
+    um[1] = 100;
+    um[3] = 300;
+    um[2] = 200;
+    um.insert({4,400}); // inserts a key-value
+    print_umap(um);
+    
+    return 0;
 }
