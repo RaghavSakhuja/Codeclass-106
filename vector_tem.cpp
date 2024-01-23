@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std; 
 
-#define YourName
-
 #ifdef YourName
     #define watch(x) cerr << #x << " = "; output(x, cerr); cerr << nline;
 #else
@@ -16,10 +14,6 @@ typedef vector<int> vi;
 typedef vector<pair<int, int>> vii;
 typedef vector<vector<int>> vvi;
 typedef vector<vii> vvii;
-typedef vector<bool> vb;
-typedef vector<vector<bool>> vvb;
-typedef vector<ld> vd;
-typedef vector<string> vs;
 typedef map<int, int> mii;
 typedef set<int> si;
 typedef set<pair<int, int>> sii;
@@ -51,7 +45,6 @@ void output(int x, ostream& os = cout){ os << x; }
 void output(char x, ostream& os = cout){ os << x; }
 void output(string x, ostream& os = cout){ os << x; }
 void output(ld x, ostream& os = cout){ os << x; }
-template<size_t n> void output(bitset<n> x, ostream& os = cout){ os << x; }
 template<class T, class R> void output(pair<T, R> p, ostream& os = cout){ output(p.first, os); os << " "; output(p.second, os); }
 template<class T> void output(vector<T> v, ostream& os = cout){ for(T i:v){output(i, os); os << " ";} os << nline; }
 template<class T> void output(set<T> v, ostream& os = cout){ for(T i:v){output(i, os); os << " ";}}
