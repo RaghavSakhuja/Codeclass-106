@@ -34,11 +34,9 @@ typedef priority_queue <pii, vector<pii>, greater<pii>> minhii;
 #define sum_all(x) accumulate(all(x), 0LL)
 #define max_idx(x) max_element(all(x)) - x.begin()
 #define min_idx(x) min_element(all(x)) - x.begin()
-#define pcnt(x) __builtin_popcountll(x)
-#define clz(x) __builtin_clzll(x)
-#define ctz(x) __builtin_ctzll(x)  
 #define prec(x) setprecision(x) << fixed
 #define yesno(x) cout << (x ? "YES" : "NO") << nline
+int sign(int x) {return (x > 0) - (x < 0);}
 
 #ifdef YourName
     #define watch(x) cerr << (#x) << " is " << x << endl;
@@ -61,7 +59,6 @@ typedef priority_queue <pii, vector<pii>, greater<pii>> minhii;
     #define dis(a,b,c,d,e) 0;
     void watcharr(vi arr){return;}
 #endif
-int sign(int x) {return (x > 0) - (x < 0);}
 
 const int inf = LLONG_MAX;
 const int neg_inf = LLONG_MIN;
