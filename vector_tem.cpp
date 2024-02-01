@@ -1,11 +1,7 @@
+// to be compile with g++ -DYourName e.cpp -o e
+
 #include <bits/stdc++.h>
 using namespace std; 
-
-#ifdef YourName
-    #define watch(x) cerr << #x << " = "; output(x, cerr); cerr << nline;
-#else
-    #define watch(x) 0
-#endif
 
 #define int long long int
 typedef long double ld;
@@ -14,6 +10,10 @@ typedef vector<int> vi;
 typedef vector<pair<int, int>> vii;
 typedef vector<vector<int>> vvi;
 typedef vector<vii> vvii;
+typedef vector<bool> vb;
+typedef vector<vector<bool>> vvb;
+typedef vector<ld> vd;
+typedef vector<string> vs;
 typedef map<int, int> mii;
 typedef set<int> si;
 typedef set<pair<int, int>> sii;
@@ -40,28 +40,27 @@ typedef priority_queue <pii, vector<pii>, greater<pii>> minhii;
 #define prec(x) setprecision(x) << fixed
 #define yesno(x) cout << (x ? "YES" : "NO") << nline
 
-void output(bool x, ostream& os = cout){ os << x; }
-void output(int x, ostream& os = cout){ os << x; }
-void output(char x, ostream& os = cout){ os << x; }
-void output(string x, ostream& os = cout){ os << x; }
-void output(ld x, ostream& os = cout){ os << x; }
-template<class T, class R> void output(pair<T, R> p, ostream& os = cout){ output(p.first, os); os << " "; output(p.second, os); }
-template<class T> void output(vector<T> v, ostream& os = cout){ for(T i:v){output(i, os); os << " ";} os << nline; }
-template<class T> void output(set<T> v, ostream& os = cout){ for(T i:v){output(i, os); os << " ";}}
-template<class T> void output(multiset<T> v, ostream& os = cout){ for(T i:v){output(i, os); os << " ";}}
-template<class T, class R> void output(map<T, R> v, ostream& os = cout){ for(pair<T, R> i:v){output(i.first, os); os << ":- "; output(i.second, os); os << "    ";}}
-
-int bin_exp(int x, int y, int m){
-    int res = 1;
-    x %= m;
-    while(y > 0){
-        if(y & 1) res = (res * x) % m;
-        y >>= 1;
-        x = (x * x) % m;
-    }
-    return res;
-}
-
+#ifdef YourName
+    #define watch(x) cerr << (#x) << " is " << x << endl;
+    #define watch2(x,y) cerr << (#x) << " is "  << (x) << " and " << (#y) << " is " << (y) << endl;
+    #define watch3(x,y,z) cerr << (#x) << " is " << (x) << " and " << (#y) << " is " << (y) << " and " << (#z) << " is " << (z) << endl;
+    #define watch4(x,y,z,w) cerr << (#x) << " is " << (x) << " and " << (#y) << " is " << (y) << " and " << (#z) << " is " << (z) << " and " << (#w) << " is " << (w) << endl;
+    #define watch5(x,y,z,w,e) cerr << (#x) << " is " << (x) << " and " << (#y) << " is " << (y) << " and " << (#z) << " is " << (z) << " and " << (#w) << " is " << (w) <<" and "<< (#e) << " is " << (e) << endl;
+    #define dis(a,b,c,d,e) cerr<<a<<" "<<b<<" "<<c<<" "<<d<<" "<<e<<endl;
+    //watch a vector<int>
+    void watcharr(vi arr){
+        cerr<<"arr is : ";
+        for(int i=0;i<arr.size();i++){cerr<<arr[i]<<" ";}
+        cerr<<endl;}
+#else
+    #define watch(x) 0;
+    #define watch2(x,y) 0;
+    #define watch3(x,y,z) 0;
+    #define watch4(x,y,z,w) 0;
+    #define watch5(x,y,z,w,e) 0;
+    #define dis(a,b,c,d,e) 0;
+    void watcharr(vi arr){return;}
+#endif
 int sign(int x) {return (x > 0) - (x < 0);}
 
 const int inf = LLONG_MAX;
